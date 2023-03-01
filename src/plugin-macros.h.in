@@ -20,7 +20,10 @@ with this program. If not, see <https://www.gnu.org/licenses/>
 #pragma once
 
 #include <util/base.h>
-#define blog(level, msg, ...) blog(level, "[obs-websocket] " msg, ##__VA_ARGS__)
+#ifndef _DEBUG
+#undef blog
+#define blog(level, msg, ...) blog_internal(level, "[obs-websocket] " msg, ##__VA_ARGS__)
+#endif // _DEBUG
 
 #define blog_debug(msg, ...) if (IsDebugEnabled()) blog(LOG_INFO, "[debug] " msg, ##__VA_ARGS__)
 
