@@ -28,6 +28,10 @@ find_package(Websocketpp 0.8 REQUIRED)
 # Find Asio
 find_package(Asio 1.12.1 REQUIRED)
 
+# ASIO re-implements posix mutexes as a C++ class wrapper, which clashes with
+# our mutex debug facilities. Therefore turn mutexe debuging off in this area.
+add_definitions(-DNO_MUTEX_DEBUG_LOGGING)
+
 add_library(obs-websocket MODULE)
 add_library(OBS::websocket ALIAS obs-websocket)
 

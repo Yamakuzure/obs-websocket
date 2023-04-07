@@ -19,9 +19,7 @@ with this program. If not, see <https://www.gnu.org/licenses/>
 
 #include <QtWidgets/QMessageBox>
 #include <QDateTime>
-#include <QTime>
 #include <obs-module.h>
-#include <obs.hpp>
 
 #include "SettingsDialog.h"
 #include "../obs-websocket.h"
