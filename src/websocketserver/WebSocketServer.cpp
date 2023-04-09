@@ -456,13 +456,11 @@ void WebSocketServer::onMessage(websocketpp::connection_hdl hdl,
 
 	skipProcessing:
 		if (ret.closeCode != WebSocketCloseCode::DontClose) {
-			websocketpp::lib::error_code errorCode;
 			_server.close(hdl, ret.closeCode, ret.closeReason, errorCode);
 			return;
 		}
 
 		if (!ret.result.is_null()) {
-			websocketpp::lib::error_code errorCode;
 			if (sessionEncoding == WebSocketEncoding::Json) {
 				std::string helloMessageJson = ret.result.dump();
 				_server.send(hdl, helloMessageJson, websocketpp::frame::opcode::text, errorCode);

@@ -45,7 +45,7 @@ void obs_data_set_json_array(obs_data_t *d, const char *key, json j)
 {
 	obs_data_array_t *array = obs_data_array_create();
 
-	for (auto &[key, value] : j.items()) {
+	for (auto &[unused_key, value] : j.items()) {
 		if (!value.is_object())
 			continue;
 
