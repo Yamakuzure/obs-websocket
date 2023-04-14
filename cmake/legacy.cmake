@@ -154,7 +154,7 @@ endif()
 
 # Random other things
 if(WIN32)
-  add_definitions(-D_WEBSOCKETPP_CPP11_STL_)
+  add_definitions(-D_WEBSOCKETPP_CPP11_STL_ -D_WIN32_WINNT=0x0A00)
 endif()
 
 if(MSVC)

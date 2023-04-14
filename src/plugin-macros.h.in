@@ -18,6 +18,8 @@ with this program. If not, see <https://www.gnu.org/licenses/>
 */
 
 #pragma once
+#ifndef SRC_PLUGIN_MACROS_GENERATED_H_INCLUDED
+#define SRC_PLUGIN_MACROS_GENERATED_H_INCLUDED 1
 
 #include <util/base.h>
 #ifndef _DEBUG
@@ -32,3 +34,5 @@ with this program. If not, see <https://www.gnu.org/licenses/>
 #define OBS_WEBSOCKET_RPC_VERSION @OBS_WEBSOCKET_RPC_VERSION@
 
 #define QT_TO_UTF8(str) str.toUtf8().constData()
+
+#endif // SRC_PLUGIN_MACROS_GENERATED_H_INCLUDED
